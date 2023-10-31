@@ -11,6 +11,8 @@ import Account from './pages/Account';
 import Checkout from './pages/Checkout';
 import Invoices from './pages/Invoices';
 
+
+
 function App() {
   const auth = useSelector(state => state.auth);
 
@@ -31,8 +33,11 @@ function App() {
           { auth.user ? <Redirect to="/" /> : <Login /> }
         </Route>
         <Route path="/" exact component={Home}/>
+        
       </Switch>
+      
     </Router>
+    
   );
 }
 

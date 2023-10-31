@@ -5,6 +5,7 @@ export default function CardProductPlaceholder() {
   return (
     <Card>
       <Card.Img variant="top" src="https://via.placeholder.com/400x250" style={{maxHeight: '180px'}} />
+     
       <Card.Body>
         <Placeholder as={Card.Title} animation="glow">
           <Placeholder lg={12}/>

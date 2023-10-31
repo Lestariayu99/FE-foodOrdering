@@ -21,14 +21,16 @@ export default function TopBar() {
   }, []);
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <Container>
         <IndexLinkContainer to="/" exact>
-          <Navbar.Brand>POS</Navbar.Brand>
+          <Navbar.Brand>MAROON-FOOD</Navbar.Brand>
         </IndexLinkContainer>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0 mr-3">
+       
+
             <NavDropdown title={products.category || 'Kategori'} id="navbarScrollingDropdown">
               {
                 categories.map((category, i) => (

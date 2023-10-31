@@ -9,6 +9,9 @@ import CardProduct from '../../components/CardProduct'
 import CardProductPlaceholder from '../../components/CardProductPlaceholder';
 import Paginate from '../../components/Paginate';
 import Tag from '../../components/Tag';
+import Footer from '../../components/Footer';
+
+
 
 export default function Home() {
   const products = useSelector(state => state.products);
@@ -53,6 +56,11 @@ export default function Home() {
           onSetPage={page => dispatch(setPage(page))}
           />
       </Container>
+      <Footer />
+
     </div>
   )
 }
+
+
+

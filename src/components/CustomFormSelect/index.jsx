@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { getLocation } from '../../app/api/address';
 import PropTypes from 'prop-types';
@@ -11,24 +11,23 @@ export default function CustomFormSelect({location, code, onChange, isInvalid, v
     .then(({data}) => setLocations(data))
   }, [location, code]);
 
-  return (
-    <Form.Select 
-      disabled={locations.length === 0} 
+
+return (
+    <Form.Control
+      as="select"
       onChange={e => onChange(e.target.value)}
       isInvalid={isInvalid}
-      defaultValue=""
+      value={value}
     >
       <option value="">Pilih lokasi...</option>
-      {
-        locations.map((location, i) => <option 
-            value={JSON.stringify({label: location.nama, value: location.kode})} 
-            key={i}
-          >{location.nama}
-          </option>
-        )
-      }
-    </Form.Select>
-  )
+      {locations.map((location, i) => (
+        <option value={JSON.stringify({ label: location.nama, value: location.kode })} key={i}>
+          {location.nama}
+        </option>
+      ))}
+       
+    </Form.Control>
+  );
 }
 
 CustomFormSelect.defaultProps = {
@@ -42,5 +41,29 @@ CustomFormSelect.propTypes = {
   code: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func.isRequired,
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

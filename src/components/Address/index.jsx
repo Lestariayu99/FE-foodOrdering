@@ -14,7 +14,7 @@ export default function Address() {
   return (
     <div>
       <LinkContainer to="/account/add-address">
-        <Button variant="danger" size="sm">
+        <Button variant="warning" size="sm">
           Tambah Alamat
         </Button>
       </LinkContainer>
@@ -25,6 +25,7 @@ export default function Address() {
             selector: row => row.nama
           }, 
           {
+            
             name: 'Detail',
             cell: row => `${row.provinsi}, ${row.kabupaten}, ${row.kecamatan}, ${row.kelurahan}, ${row.detail}`
           }
@@ -34,3 +35,8 @@ export default function Address() {
     </div>
   )
 }
+
+
+
+
+

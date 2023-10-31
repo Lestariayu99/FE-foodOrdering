@@ -28,5 +28,5 @@ export async function getOrders(){
           ? JSON.parse(localStorage.getItem('auth')) : {};
 
   return await axios
-    .get(`${config.api_host}/api/orders?limit=`, {headers: { authorization: `Bearer ${token}`}});
+    .get(`${config.api_host}/api/orders?limit=1000`, {headers: { authorization: `Bearer ${token}`}});
 }
