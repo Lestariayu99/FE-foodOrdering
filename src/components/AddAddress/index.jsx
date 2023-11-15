@@ -7,7 +7,7 @@ import axios from 'axios';
 import { createAddress } from '../../app/api/address';
 import { useHistory } from 'react-router';
 
-
+// Membuat skema validasi menggunakan Yup
 const schema = yup.object().shape({
   nama: yup.string().required('Nama alamat harus diisi'),
   detail: yup.string().required('Detail alamat harus diisi'),
@@ -26,6 +26,7 @@ export default function AddAddress() {
   const history = useHistory();
   const allField = watch();
 
+// State untuk data provinsi, kabupaten, kecamatan, dan kelurahan
   const [provinces, setProvinces] = useState([]);
   const [kabupaten, setKabupaten] = useState([]);
   const [kecamatan, setKecamatan] = useState([]);
@@ -35,6 +36,7 @@ export default function AddAddress() {
   const [dataKecamatan, setDataKecamatan] = useState(null);
   const [dataKelurahan, setDataKelurahan] = useState(null);
 
+  // Mengambil data provinsi menggunakan axios
   useEffect(() => {
     const fetchProvinces = async () => {
       try {
@@ -53,6 +55,7 @@ export default function AddAddress() {
     fetchProvinces();
   }, []);
 
+  // Mengambil fungsi untuk mengambil data kabupaten, kecamatan, kelurahan
   const fetchKabupatenData = async (provinceId) => {
     try {
       const response = await axios.get(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${provinceId}.json`);
@@ -92,6 +95,7 @@ export default function AddAddress() {
     }
   };
 
+// Fungsi yang dipanggil saat formulir disubmit
   const onSubmit = async (formData) => {
     if (dataProvinsi) {
       const payload = {
@@ -119,6 +123,7 @@ export default function AddAddress() {
     }
   }
 
+  // Mengatur ulang nilai field terkait ketika pilihan provinsi, kabupaten, atau kecamatan berubah
   useEffect(() => {
     setValue('kabupaten', null);
     setValue('kecamatan', null);
@@ -135,6 +140,8 @@ export default function AddAddress() {
   }, [allField.kecamatan, setValue]);
 
   return (
+    
+    // Formulir penambahan alamat
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Row>
         <Col md={6}>
