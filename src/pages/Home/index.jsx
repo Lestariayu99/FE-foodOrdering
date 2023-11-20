@@ -10,6 +10,7 @@ import CardProductPlaceholder from '../../components/CardProductPlaceholder';
 import Paginate from '../../components/Paginate';
 import Tag from '../../components/Tag';
 import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
 
 
 
@@ -30,7 +31,10 @@ export default function Home() {
 
   return (
     <div>
+      
+      <Navbar />
       <Container className="mt-5 p-5">
+      
         <BreadCrumb items={breadcrumb}/>
         <strong>Tags: </strong> <Tag items={tags} onClick={tag => dispatch(toggleTags(tag))}/>
         <Row xs={1} lg={4} md={2} className="g-4 mt-1 mb-5">
@@ -57,6 +61,8 @@ export default function Home() {
           />
       </Container>
       <Footer />
+     
+
 
     </div>
   )
