@@ -55,8 +55,8 @@ export default function Cart() {
   return (
     <Container className="mt-5 p-5">
       <Card>
-        <Card.Header>
-          keranjang Belanja
+      <Card.Header className="bg-danger text-light">
+          Keranjang Belanja
         </Card.Header>
         <Card.Body>
           <DataTable

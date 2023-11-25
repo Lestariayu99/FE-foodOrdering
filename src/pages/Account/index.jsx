@@ -14,7 +14,7 @@ export default function Account() {
   return (
     <Container className="mt-5 p-5">
       <Card>
-        <Card.Header>
+        <Card.Header className="bg-danger text-light">
           Account
         </Card.Header>
         <Card.Body>
@@ -58,3 +58,5 @@ export default function Account() {
     </Container>
   )
 }
+
+

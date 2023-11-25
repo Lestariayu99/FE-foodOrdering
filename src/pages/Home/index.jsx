@@ -33,7 +33,7 @@ export default function Home() {
     <div>
       
       <Navbar />
-      <Container className="mt-5 p-5">
+      <Container className="mt-2 p-2">
       
         <BreadCrumb items={breadcrumb}/>
         <strong>Tags: </strong> <Tag items={tags} onClick={tag => dispatch(toggleTags(tag))}/>
